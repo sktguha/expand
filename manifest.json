@@ -10,7 +10,11 @@
         "https://www.facebook.com/*",
         "http://www.facebook.com/*"
       ],
-	  "js" : ["jquery.js","script.js"],
+	  "js" : [
+    "jquery.js",
+    "list.js",
+    "script.js"
+    ],
       "run_at": "document_end"
     }
   ], 
