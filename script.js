@@ -1,3 +1,9 @@
+function getFullForm(word){
+       if(word.toUpperCase() === word){
+           return list[word] || list[word.toLowerCase()];
+       }
+    return null;
+}
 var minTokenLengh = 3;
 document.body.oninput = function(e){
 		e.target = e.target || e.srcElement;
@@ -10,8 +16,9 @@ document.body.oninput = function(e){
 				var ch = str[i];
 				if([' ','\n','\t'].indexOf(ch) !== -1){
 					//flush buffer
-					if(word.length >= minTokenLengh && list[word]){
-						newStr += list[word];
+                    var rep = getFullForm(word);
+					if(word.length >= minTokenLengh && rep){
+						newStr += rep;
 						word = "";
 					} else if(word){
 						newStr += word;
@@ -23,8 +30,9 @@ document.body.oninput = function(e){
 				}
 			}
 			//flush buffer
-			if(word.length >=  minTokenLengh && list[word]){
-				newStr += list[word];
+            var rep = getFullForm(word);
+			if(word.length >=  minTokenLengh && rep){
+				newStr += rep;
 				word = "";
 			} else if(word){
 				newStr += word;
@@ -32,4 +40,4 @@ document.body.oninput = function(e){
 			}
 			textarea.value = newStr;
 		}
-	}
+	};
