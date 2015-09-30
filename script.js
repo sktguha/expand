@@ -1,6 +1,11 @@
 function getFullForm(word){
-       if(word.toUpperCase() === word){
-           return list[word] || list[word.toLowerCase()];
+
+    if(word.toUpperCase() === word){
+        var exp = list[word] || list[word.toLowerCase()];
+        //such filters can be disabled later on. options menu can be added
+        if(exp && exp.toLowerCase().indexOf('sex') === -1){
+            return exp;
+        }
        }
     return null;
 }
