@@ -1,4 +1,5 @@
-	document.body.oninput = function(e){
+var minTokenLengh = 3;
+document.body.oninput = function(e){
 		e.target = e.target || e.srcElement;
 		if(e.target.className === 'uiTextareaAutogrow _552m'){
 			var textarea = e.target;
@@ -9,7 +10,7 @@
 				var ch = str[i];
 				if([' ','\n','\t'].indexOf(ch) !== -1){
 					//flush buffer
-					if(list[word]){
+					if(word.length >= minTokenLengh && list[word]){
 						newStr += list[word];
 						word = "";
 					} else if(word){
@@ -22,7 +23,7 @@
 				}
 			}
 			//flush buffer
-			if(list[word]){
+			if(word.length >=  minTokenLengh && list[word]){
 				newStr += list[word];
 				word = "";
 			} else if(word){
