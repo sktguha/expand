@@ -1,5 +1,6 @@
 //this is the extract . extracted from http://www.netlingo.com/acronyms.php
 //run this script in chrome devtools after opening the above link
+// the list goes into variable list
 var elem = document.querySelector('#container > div.body > div.list_box3 > ul');
 var list = {};
 var chs = elem.getElementsByTagName("LI");
