@@ -10,6 +10,8 @@ function getFullForm(word){
     return null;
 }
 var minTokenLengh = 3;
+//need to use mutation observer here as currently the code is too inefficient.
+//https://github.com/uzairfarooq/arrive/ seems to be good
 document.body.oninput = function(e){
 		e.target = e.target || e.srcElement;
 		if(e.target.className === 'uiTextareaAutogrow _552m'){
