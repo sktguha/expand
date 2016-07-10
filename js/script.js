@@ -2,6 +2,9 @@ var reg = /message_batch\[(\d*)\]\[body\]=(.*)/
 
 registerHook();
 //need to verify if using chrome.tabs.onUpdate.addListener approach is better than this
+//In future changing the requestBody data in a  "post" request using the webrequest api can be used if support is added ,
+// can intercept the network call to send.php
+// https://bugs.chromium.org/p/chromium/issues/detail?id=91191 . (support for this already exists on firefox)
 function intercept(body){
     if(reg.test(body)){
 		body = body.split("&").map(function(str){
